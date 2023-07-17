@@ -9,14 +9,14 @@ open.onclick = function(){
 close.onclick = function() {
     menu.style.right = "-40%";
 }
-function opentab(tabName){
+function opentab(tabName, linksname){
     for(tablink of tablinks){
         tablink.classList.remove("active-link");
     }
     for(content of contents){
         content.classList.remove("active-tab");
     }
-  event.currentTarget.classList.add("active-link");
+    document.getElementById(linksname).classList.add("active-link");
   document.getElementById(tabName).classList.add("active-tab");
 }
 
