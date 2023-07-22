@@ -1,24 +1,54 @@
-let tablinks = document.querySelectorAll(".tab-links");
-let contents = document.querySelectorAll(".contents");
-let close = document.querySelector("#close");
-let open = document.querySelector("#open");
-let menu = document.querySelector("#menu");
+const tablinks = document.querySelectorAll(".tab-links");
+const contents = document.querySelectorAll(".contents");
+const close = document.querySelector("#close");
+const open = document.querySelector("#open");
+const menu = document.querySelector("#menu");
+const skill = document.getElementById('skill');
+const skilldesc = document.getElementById('skills');
+const edu = document.getElementById('edu');
+const education = document.getElementById('education');
 open.onclick = function(){
     menu.style.right = "0";
 }
 close.onclick = function() {
     menu.style.right = "-40%";
 }
-function opentab(tabName, linksname){
-    for(tablink of tablinks){
+skill.addEventListener( "click", () => {
+    for (tablink of tablinks) {
         tablink.classList.remove("active-link");
     }
-    for(content of contents){
+    for (content of contents) {
         content.classList.remove("active-tab");
     }
-    document.getElementById(linksname).classList.add("active-link");
-  document.getElementById(tabName).classList.add("active-tab");
+    skill.classList.add("active-link");
+    skilldesc.classList.add("active-tab");
 }
+)
+edu.addEventListener( "click", () => {
+    for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+    for (content of contents) {
+        content.classList.remove("active-tab");
+    }
+    edu.classList.add("active-link");
+    education.classList.add("active-tab");
+}
+)
 
+window.addEventListener('scroll',reveal);
 
-
+function reveal(){
+    var reveals = document.querySelectorAll('.reveal');
+    for(var i = 0; i < reveals.length; i++){
+        var windowheith = window.innerHeight;
+        var revealPoint = 100;
+        var revealTop = reveals[i].getBoundingClientRect().top;
+        if(revealTop < windowheith - revealPoint){
+            reveals[i].classList.add('active');
+        }
+        else{
+            reveals[i].classList.remove('active');
+        }
+    }
+}

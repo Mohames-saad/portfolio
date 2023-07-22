@@ -328,7 +328,7 @@ height: 340px;
 .worklist{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    margin-top: 50px;
+    margin-top: 35px;
     gap: 40px;
 }
 .work{
@@ -336,7 +336,8 @@ height: 340px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    min-height: 400px;
+    max-height: 500px;
+    max-width: 380px;
 }
 
 .work img{
@@ -607,4 +608,16 @@ nav .bx{
         font-size: 14px;
     }
 
+}
+
+/* ============================================== */
+.reveal{
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
 }
