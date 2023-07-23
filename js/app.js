@@ -40,18 +40,27 @@ window.addEventListener('scroll',reveal);
 
 function reveal(){
     const reveals = document.querySelectorAll('.reveal');
+    const windowheigth = window.innerHeight;
+    
     for(let i = 0; i < reveals.length; i++){
-        const windowheith = window.innerHeight;
-        
         const revealTop = reveals[i].getBoundingClientRect().top;
-        if(revealTop < windowheith - 100){
+        if(revealTop < windowheigth - 100){
             reveals[i].classList.add('active');
         }
         else{
             reveals[i].classList.remove('active');
         }
     }
+    const revealX =document.querySelector('.revealX');
+    const revealTopX = revealX.getBoundingClientRect().top;
+    if(revealTopX < windowheigth - 100){
+        revealX.classList.add('active');
+    }
+    else{
+        revealX.classList.remove('active');
+    }
 }
 window.addEventListener('load',()=>{
-   document.querySelector('.detel').classList.add('active');
+    document.querySelector('.detel').classList.add('active');
+    document.querySelector('.img').classList.add('active');
 })
