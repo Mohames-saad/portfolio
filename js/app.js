@@ -39,12 +39,12 @@ edu.addEventListener( "click", () => {
 window.addEventListener('scroll',reveal);
 
 function reveal(){
-    var reveals = document.querySelectorAll('.reveal');
-    for(var i = 0; i < reveals.length; i++){
-        var windowheith = window.innerHeight;
-        var revealPoint = 100;
-        var revealTop = reveals[i].getBoundingClientRect().top;
-        if(revealTop < windowheith - revealPoint){
+    const reveals = document.querySelectorAll('.reveal');
+    for(let i = 0; i < reveals.length; i++){
+        const windowheith = window.innerHeight;
+        
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        if(revealTop < windowheith - 100){
             reveals[i].classList.add('active');
         }
         else{
@@ -52,3 +52,6 @@ function reveal(){
         }
     }
 }
+window.addEventListener('load',()=>{
+   document.querySelector('.detel').classList.add('active');
+})
